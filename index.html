@@ -32,7 +32,30 @@
         function draw() {
             x.fillStyle="black"; x.fillRect(0,0,400,400);
             x.fillStyle="red"; x.fillRect(f.x,f.y,b,b);
-            s.forEach((p,i)=>{ x.fillStyle=i==0?"green":"lime"; x.fillRect(p.x,p.y,b,b); });
+            s.forEach((p, i) => {
+    // Snake ka sar (Head)
+    if (i === 0) {
+        x.fillStyle = "#2ecc71"; // Dark Green
+        x.beginPath();
+        x.roundRect(p.x, p.y, b, b, 5); // Thoda round shape
+        x.fill();
+
+        // Aankhein (Eyes)
+        x.fillStyle = "white";
+        x.fillRect(p.x + 4, p.y + 4, 4, 4); // Left eye
+        x.fillRect(p.x + 12, p.y + 4, 4, 4); // Right eye
+        x.fillStyle = "black";
+        x.fillRect(p.x + 5, p.y + 5, 2, 2); 
+        x.fillRect(p.x + 13, p.y + 5, 2, 2);
+    } 
+    // Snake ki body
+    else {
+        x.fillStyle = "lime"; // Light Green
+        x.beginPath();
+        x.roundRect(p.x + 2, p.y + 2, b - 4, b - 4, 8); // Body ko patla aur round banaya
+        x.fill();
+    }
+});
             let h={...s[0]};
             if(d=="UP")h.y-=b; if(d=="DOWN")h.y+=b; if(d=="LEFT")h.x-=b; if(d=="RIGHT")h.x+=b;
             if(h.x==f.x&&h.y==f.y){ sc++; document.getElementById("s").innerText=sc; f={x:Math.floor(Math.random()*19)*b,y:Math.floor(Math.random()*19)*b};}
