@@ -37,7 +37,11 @@
     if (i === 0) {
         x.fillStyle = "#2ecc71"; // Dark Green
         x.beginPath();
-        x.roundRect(p.x, p.y, b, b, 5); // Thoda round shape
+        if(h.x < 0 || h.x >= 400 || h.y < 0 || h.y >= 400 || s.some(p => p.x == h.x && p.y == h.y)) {
+                alert("Game Over! Score: " + sc);
+                window.location.href = window.location.href; // Ye page ko force reload karega
+                return;
+            }
         x.fill();
 
         // Aankhein (Eyes)
@@ -63,7 +67,7 @@
             if(h.x<0||h.x>=400||h.y<0||h.y>=400||s.some(p=>p.x==h.x&&p.y==h.y)){ alert("Game Over!"); location.reload(); }
             s.unshift(h);
         }
-        setInterval(draw, 150);
+        setInterval(draw, 250);
         document.onkeydown=e=>{ if(e.keyCode==38&&d!="DOWN")d="UP"; if(e.keyCode==40&&d!="UP")d="DOWN"; if(e.keyCode==37&&d!="RIGHT")d="LEFT"; if(e.keyCode==39&&d!="LEFT")d="RIGHT";};
     </script>
 </body>
