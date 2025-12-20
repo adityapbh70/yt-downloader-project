@@ -4,20 +4,27 @@
     <title>Aditya's Snake Game</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <style>
-        body { background: #1a1a1a; color: white; text-align: center; font-family: Arial; margin: 0; overflow: hidden; }
-        canvas { background: #000; border: 3px solid #444; margin-top: 10px; max-width: 95vw; box-shadow: 0 0 20px rgba(0,0,0,0.5); }
-        .controls { display: grid; grid-template-columns: repeat(3, 70px); gap: 15px; justify-content: center; margin-top: 20px; }
-        button { width: 70px; height: 70px; background: #333; color: white; border: 2px solid #555; border-radius: 15px; font-size: 25px; }
-        button:active { background: #555; }
-        .up { grid-column: 2; }
-        .left { grid-column: 1; }
-        .right { grid-column: 3; }
-        .down { grid-column: 2; }
+        body { background: #1a1a1a; color: white; text-align: center; font-family: sans-serif; margin: 0; overflow: hidden; }
+        canvas { background: #000; border: 4px solid #333; margin-top: 5px; max-width: 90vw; border-radius: 10px; }
+        .score-box { display: flex; justify-content: space-around; margin: 10px auto; max-width: 400px; background: #222; padding: 10px; border-radius: 8px; font-size: 14px; }
+        .controls { display: grid; grid-template-columns: repeat(3, 70px); gap: 15px; justify-content: center; margin-top: 15px; }
+        button { width: 70px; height: 70px; background: #333; color: white; border: 2px solid #444; border-radius: 20px; font-size: 28px; }
+        button:active { background: #2ecc71; }
+        .up { grid-column: 2; } .left { grid-column: 1; } .right { grid-column: 3; } .down { grid-column: 2; }
+        #winner { color: #f1c40f; display: block; font-size: 12px; margin-top: 5px; }
     </style>
 </head>
 <body>
-    <h1 style="margin: 10px 0;">Aditya's Game 🐍</h1>
-    <div style="font-size: 20px;">Score: <span id="s" style="color:#2ecc71">0</span></div>
+    <h1 style="color:#2ecc71; margin: 10px 0;">Aditya's Game 🐍</h1>
+    
+    <div class="score-box">
+        <div>Score: <span id="s" style="color:#2ecc71">0</span></div>
+        <div>
+            Best: <span id="hs" style="color:#f1c40f">0</span>
+            <span id="winner">Player: None</span>
+        </div>
+    </div>
+
     <canvas id="g" width="400" height="400"></canvas>
 
     <div class="controls">
@@ -30,57 +37,51 @@
     <script>
         const c=document.getElementById("g"), x=c.getContext("2d");
         let b=20, s=[{x:200,y:200}], f={x:100,y:100}, d='', sc=0;
+        
+        // Data Load Karein
+        let highScore = localStorage.getItem("snakeHS") || 0;
+        let highName = localStorage.getItem("snakeName") || "None";
+        document.getElementById("hs").innerText = highScore;
+        document.getElementById("winner").innerText = "Player: " + highName;
 
         function draw() {
-            // Background saaf karein
             x.fillStyle="black"; x.fillRect(0,0,400,400);
-            
-            // Khana (Food)
             x.fillStyle="red"; x.fillRect(f.x,f.y,b,b);
             
-            // Saap (Snake) Draw Karein
             s.forEach((p, i) => {
-                if (i === 0) {
-                    x.fillStyle = "#2ecc71"; // Sar ka color
-                    x.fillRect(p.x, p.y, b, b);
-                    // Sar par aankhein
-                    x.fillStyle = "white";
-                    x.fillRect(p.x + 4, p.y + 4, 4, 4);
-                    x.fillRect(p.x + 12, p.y + 4, 4, 4);
-                } else {
-                    x.fillStyle = "lime"; // Body ka color
-                    x.fillRect(p.x + 2, p.y + 2, b - 4, b - 4);
+                x.fillStyle = i === 0 ? "#2ecc71" : "#27ae60";
+                x.fillRect(p.x, p.y, b, b);
+                if(i==0){ 
+                    x.fillStyle="white"; x.fillRect(p.x+4,p.y+4,4,4); x.fillRect(p.x+12,p.y+4,4,4);
                 }
             });
 
-            // Snake Movement logic
             let h={...s[0]};
             if(d=="UP")h.y-=b; if(d=="DOWN")h.y+=b; if(d=="LEFT")h.x-=b; if(d=="RIGHT")h.x+=b;
             
-            if(d !== '') { // Agar game shuru ho chuka hai
+            if(d !== '') {
                 if(h.x==f.x&&h.y==f.y){ 
-                    sc++; 
-                    document.getElementById("s").innerText=sc; 
+                    sc++; document.getElementById("s").innerText=sc; 
                     f={x:Math.floor(Math.random()*19)*b,y:Math.floor(Math.random()*19)*b};
                 } else s.pop();
 
                 if(h.x < 0 || h.x >= 400 || h.y < 0 || h.y >= 400 || s.some(p => p.x == h.x && p.y == h.y)){ 
-                    alert("Game Over! Score: " + sc); 
+                    if(sc > highScore) {
+                        let pName = prompt("Mubarak ho! Naya High Score! Apna naam likhein:");
+                        if(!pName) pName = "Guest";
+                        localStorage.setItem("snakeHS", sc);
+                        localStorage.setItem("snakeName", pName);
+                        alert("Record Saved: " + pName + " - " + sc);
+                    } else {
+                        alert("Game Over! Score: " + sc);
+                    }
                     location.reload(); 
                     return;
                 }
                 s.unshift(h);
             }
         }
-
-        setInterval(draw, 250); // Speed control
-
-        document.onkeydown=e=>{ 
-            if(e.keyCode==38&&d!="DOWN")d="UP"; 
-            if(e.keyCode==40&&d!="UP")d="DOWN"; 
-            if(e.keyCode==37&&d!="RIGHT")d="LEFT"; 
-            if(e.keyCode==39&&d!="LEFT")d="RIGHT";
-        };
+        setInterval(draw, 250);
     </script>
 </body>
 </html>
