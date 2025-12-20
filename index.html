@@ -1,29 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <title>YT Downloader</title>
+    <title>Aditya's Snake Game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <style>
-        body { font-family: sans-serif; display: flex; justify-content: center; padding-top: 50px; background: #f4f4f4; }
-        .box { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        input { padding: 10px; width: 300px; border: 1px solid #ccc; border-radius: 4px; }
-        button { padding: 10px 20px; background: red; color: white; border: none; border-radius: 4px; cursor: pointer; }
+        body { background: #1a1a1a; color: white; text-align: center; font-family: Arial; margin: 0; overflow: hidden; }
+        canvas { background: #000; border: 3px solid #444; margin-top: 10px; max-width: 90vw; }
+        .controls { display: grid; grid-template-columns: repeat(3, 60px); gap: 10px; justify-content: center; margin-top: 20px; }
+        button { width: 60px; height: 60px; background: #444; color: white; border: none; border-radius: 10px; font-size: 20px; }
+        .up { grid-column: 2; }
+        .left { grid-column: 1; }
+        .right { grid-column: 3; }
+        .down { grid-column: 2; }
     </style>
 </head>
 <body>
-    <div class="box">
-        <h2>YouTube Downloader</h2>
-        <input type="text" id="urlInput" placeholder="Paste YouTube Link Here...">
-        <button onclick="startDownload()">Download</button>
+    <h1>Aditya's Game 🐍</h1>
+    <div>Score: <span id="s">0</span></div>
+    <canvas id="g" width="400" height="400"></canvas>
+
+    <div class="controls">
+        <button class="up" onclick="d='UP'">▲</button>
+        <button class="left" onclick="d='LEFT'">◀</button>
+        <button class="right" onclick="d='RIGHT'">▶</button>
+        <button class="down" onclick="d='DOWN'">▼</button>
     </div>
 
     <script>
-        function startDownload() {
-            const url = document.getElementById('urlInput').value;
-            if(!url) return alert("Pehle link toh daalo!");
-            
-            // Backend server ko link bhejna
-            window.location.href = `https://my-yt-api-ruij.onrender.com/download?url=` + url;
+        const c=document.getElementById("g"), x=c.getContext("2d");
+        let b=20, s=[{x:200,y:200}], f={x:100,y:100}, d, sc=0;
+        function draw() {
+            x.fillStyle="black"; x.fillRect(0,0,400,400);
+            x.fillStyle="red"; x.fillRect(f.x,f.y,b,b);
+            s.forEach((p,i)=>{ x.fillStyle=i==0?"green":"lime"; x.fillRect(p.x,p.y,b,b); });
+            let h={...s[0]};
+            if(d=="UP")h.y-=b; if(d=="DOWN")h.y+=b; if(d=="LEFT")h.x-=b; if(d=="RIGHT")h.x+=b;
+            if(h.x==f.x&&h.y==f.y){ sc++; document.getElementById("s").innerText=sc; f={x:Math.floor(Math.random()*19)*b,y:Math.floor(Math.random()*19)*b};}
+            else s.pop();
+            if(h.x<0||h.x>=400||h.y<0||h.y>=400||s.some(p=>p.x==h.x&&p.y==h.y)){ alert("Game Over!"); location.reload(); }
+            s.unshift(h);
         }
+        setInterval(draw, 150);
+        document.onkeydown=e=>{ if(e.keyCode==38&&d!="DOWN")d="UP"; if(e.keyCode==40&&d!="UP")d="DOWN"; if(e.keyCode==37&&d!="RIGHT")d="LEFT"; if(e.keyCode==39&&d!="LEFT")d="RIGHT";};
     </script>
 </body>
 </html>
