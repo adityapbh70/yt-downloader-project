@@ -1,27 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Aditya's Snake Game</title>
+    <title>Aditya's Snake Game - Levels & Winner Name</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <style>
         body { background: #1a1a1a; color: white; text-align: center; font-family: sans-serif; margin: 0; overflow: hidden; }
         canvas { background: #000; border: 4px solid #333; margin-top: 5px; max-width: 90vw; border-radius: 10px; }
-        .score-box { display: flex; justify-content: space-around; margin: 10px auto; max-width: 400px; background: #222; padding: 10px; border-radius: 8px; font-size: 14px; }
+        .info-box { display: flex; justify-content: space-around; margin: 10px auto; max-width: 450px; background: #222; padding: 10px; border-radius: 8px; font-size: 14px; }
         .controls { display: grid; grid-template-columns: repeat(3, 70px); gap: 15px; justify-content: center; margin-top: 15px; }
         button { width: 70px; height: 70px; background: #333; color: white; border: 2px solid #444; border-radius: 20px; font-size: 28px; }
         button:active { background: #2ecc71; }
         .up { grid-column: 2; } .left { grid-column: 1; } .right { grid-column: 3; } .down { grid-column: 2; }
-        #winner { color: #f1c40f; display: block; font-size: 12px; margin-top: 5px; }
+        #winner-name { color: #f1c40f; font-weight: bold; display: block; margin-top: 3px; }
     </style>
 </head>
 <body>
     <h1 style="color:#2ecc71; margin: 10px 0;">Aditya's Game 🐍</h1>
     
-    <div class="score-box">
-        <div>Score: <span id="s" style="color:#2ecc71">0</span></div>
+    <div class="info-box">
+        <div>Score: <br><span id="s" style="color:#2ecc71; font-size:20px;">0</span></div>
+        <div>Level: <br><span id="lvl" style="color:#3498db; font-size:20px;">1</span></div>
         <div>
-            Best: <span id="hs" style="color:#f1c40f">0</span>
-            <span id="winner">Player: None</span>
+            Best Score: <span id="hs" style="color:#f1c40f">0</span>
+            <span id="winner-name">Player: None</span>
         </div>
     </div>
 
@@ -36,13 +37,13 @@
 
     <script>
         const c=document.getElementById("g"), x=c.getContext("2d");
-        let b=20, s=[{x:200,y:200}], f={x:100,y:100}, d='', sc=0;
+        let b=20, s=[{x:200,y:200}], f={x:100,y:100}, d='', sc=0, level=1, speed=250, gameLoop;
         
-        // Data Load Karein
+        // Purana Data Load Karein
         let highScore = localStorage.getItem("snakeHS") || 0;
         let highName = localStorage.getItem("snakeName") || "None";
         document.getElementById("hs").innerText = highScore;
-        document.getElementById("winner").innerText = "Player: " + highName;
+        document.getElementById("winner-name").innerText = "Player: " + highName;
 
         function draw() {
             x.fillStyle="black"; x.fillRect(0,0,400,400);
@@ -51,9 +52,7 @@
             s.forEach((p, i) => {
                 x.fillStyle = i === 0 ? "#2ecc71" : "#27ae60";
                 x.fillRect(p.x, p.y, b, b);
-                if(i==0){ 
-                    x.fillStyle="white"; x.fillRect(p.x+4,p.y+4,4,4); x.fillRect(p.x+12,p.y+4,4,4);
-                }
+                if(i==0){ x.fillStyle="white"; x.fillRect(p.x+4,p.y+4,4,4); x.fillRect(p.x+12,p.y+4,4,4); }
             });
 
             let h={...s[0]};
@@ -61,17 +60,21 @@
             
             if(d !== '') {
                 if(h.x==f.x&&h.y==f.y){ 
-                    sc++; document.getElementById("s").innerText=sc; 
+                    sc++; 
+                    document.getElementById("s").innerText=sc; 
+                    if(sc % 5 === 0) { level++; document.getElementById("lvl").innerText = level; updateSpeed(); }
                     f={x:Math.floor(Math.random()*19)*b,y:Math.floor(Math.random()*19)*b};
                 } else s.pop();
 
                 if(h.x < 0 || h.x >= 400 || h.y < 0 || h.y >= 400 || s.some(p => p.x == h.x && p.y == h.y)){ 
                     if(sc > highScore) {
-                        let pName = prompt("Mubarak ho! Naya High Score! Apna naam likhein:");
+                        let pName = prompt("Naya Record! Apna naam likhein:");
                         if(!pName) pName = "Guest";
                         localStorage.setItem("snakeHS", sc);
                         localStorage.setItem("snakeName", pName);
-                        alert("Record Saved: " + pName + " - " + sc);
+                        // Yahan naam update ho raha hai
+                        document.getElementById("winner-name").innerText = "Player: " + pName;
+                        alert("Shabash " + pName + "! Naya High Score: " + sc);
                     } else {
                         alert("Game Over! Score: " + sc);
                     }
@@ -81,7 +84,21 @@
                 s.unshift(h);
             }
         }
-        setInterval(draw, 250);
+
+        function updateSpeed() {
+            clearInterval(gameLoop);
+            speed = Math.max(80, 250 - (level * 20)); 
+            gameLoop = setInterval(draw, speed);
+        }
+
+        gameLoop = setInterval(draw, speed);
+        
+        document.onkeydown=e=>{ 
+            if(e.keyCode==38&&d!="DOWN")d="UP"; 
+            if(e.keyCode==40&&d!="UP")d="DOWN"; 
+            if(e.keyCode==37&&d!="RIGHT")d="LEFT"; 
+            if(e.keyCode==39&&d!="LEFT")d="RIGHT";
+        };
     </script>
 </body>
 </html>
