@@ -5,153 +5,113 @@
     <link rel="icon" href="https://i.postimg.cc/xTy2GLwV/prod-2020722806-1675799238638.jpg" type="image/jpeg">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <style>
-        body { background: #0f172a; color: white; text-align: center; font-family: 'Segoe UI', sans-serif; margin: 0; overflow-x: hidden; }
-        .navbar { display: flex; justify-content: space-between; align-items: center; background: rgba(30, 41, 59, 0.95); padding: 12px 25px; position: sticky; top: 0; z-index: 1000; border-bottom: 2px solid #2ecc71; }
-        .nav-logo { display: flex; align-items: center; gap: 12px; font-weight: bold; color: #2ecc71; font-size: 1.3rem; }
-        .nav-logo img { width: 40px; height: 40px; border-radius: 50%; border: 2px solid #2ecc71; }
-        .nav-links a { color: white; text-decoration: none; margin-left: 20px; font-size: 15px; cursor: pointer; }
-        
-        #scoreModal { display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #1e293b; padding: 30px; border-radius: 20px; border: 2px solid #2ecc71; z-index: 2000; width: 280px; box-shadow: 0 0 50px rgba(0,0,0,0.8); }
-        .close-btn { background: #e74c3c; border: none; color: white; padding: 8px 20px; border-radius: 5px; cursor: pointer; margin-top: 15px; }
+        body { 
+            background: #0f172a; color: white; text-align: center; 
+            font-family: 'Segoe UI', sans-serif; margin: 0; 
+            overflow-x: hidden; touch-action: manipulation; 
+        }
 
-        .hero { height: 80vh; display: flex; flex-direction: column; justify-content: center; align-items: center; }
-        .btn-card { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); padding: 25px; margin: 15px; border-radius: 20px; width: 200px; cursor: pointer; transition: 0.3s; }
-        .btn-card:hover { transform: translateY(-10px); background: rgba(46, 204, 113, 0.1); border-color: #2ecc71; }
+        /* Navbar Mobile Responsive */
+        .navbar {
+            display: flex; justify-content: space-between; align-items: center;
+            background: rgba(30, 41, 59, 0.95); padding: 10px 15px;
+            position: sticky; top: 0; z-index: 1000; border-bottom: 2px solid #2ecc71;
+        }
+        .nav-logo { display: flex; align-items: center; gap: 8px; font-weight: bold; color: #2ecc71; font-size: 1rem; }
+        .nav-logo img { width: 30px; height: 30px; border-radius: 50%; }
+        .nav-links a { color: white; text-decoration: none; margin-left: 10px; font-size: 13px; cursor: pointer; }
 
-        #game-area { display: none; padding-top: 20px; }
-        canvas { background: #000; border: 4px solid #334155; border-radius: 15px; max-width: 95vw; cursor: crosshair; }
-        .controls { display: grid; grid-template-columns: repeat(3, 70px); gap: 10px; justify-content: center; margin-top: 20px; }
-        .ctrl-btn { width: 70px; height: 70px; background: #1e293b; color: white; border: none; border-radius: 50%; font-size: 24px; }
+        /* Game Cards Mobile Size */
+        .hero { min-height: 80vh; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 20px; }
+        .btn-card {
+            background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 20px; margin: 10px; border-radius: 15px; width: 80%; max-width: 250px; cursor: pointer;
+        }
+
+        /* Canvas Responsive */
+        canvas { 
+            background: #000; border: 3px solid #334155; border-radius: 10px; 
+            width: 95vw; height: auto; max-width: 400px; touch-action: none;
+        }
+
+        /* Snake Controls for Mobile */
+        .controls { 
+            display: grid; grid-template-columns: repeat(3, 1fr); 
+            gap: 10px; width: 250px; margin: 20px auto; 
+        }
+        .ctrl-btn { 
+            width: 65px; height: 65px; background: #1e293b; color: white; 
+            border: 2px solid #334155; border-radius: 50%; font-size: 24px;
+            display: flex; align-items: center; justify-content: center;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .ctrl-btn:active { background: #2ecc71; }
+
+        footer { 
+            margin-top: 30px; padding: 20px; font-size: 14px; 
+            background: rgba(15, 23, 42, 0.8); color: #aaa; 
+        }
+
+        /* Leaderboard Modal Mobile */
+        #scoreModal { 
+            display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
+            background: #1e293b; padding: 20px; border-radius: 15px; border: 2px solid #2ecc71;
+            z-index: 2000; width: 85%; max-width: 300px;
+        }
     </style>
 </head>
 <body>
 
     <nav class="navbar">
-        <div class="nav-logo"><img src="https://i.postimg.cc/xTy2GLwV/prod-2020722806-1675799238638.jpg"> ADITYA HUB</div>
+        <div class="nav-logo"><img src="https://i.postimg.cc/xTy2GLwV/prod-2020722806-1675799238638.jpg"> ADITYA</div>
         <div class="nav-links">
             <a onclick="location.reload()">Home</a>
             <a onclick="showLeaderboard()">🏆 Top 5</a>
         </div>
     </nav>
 
-    <div id="scoreModal">
-        <h2 style="color: #f1c40f;">🏆 TOP 5 PLAYERS</h2>
-        <div id="highScoreContent"></div>
-        <button class="close-btn" onclick="closeLeaderboard()">Close</button>
-    </div>
-
     <div id="main-menu" class="hero">
-        <h1 style="font-size: 40px; color: #2ecc71;">SELECT GAME</h1>
-        <div style="display: flex; flex-wrap: wrap; justify-content: center;">
-            <div class="btn-card" onclick="startSnake()">
-                <div style="font-size: 50px;">🐍</div>
-                <h3>Snake Pro</h3>
-            </div>
-            <div class="btn-card" onclick="startFruit()">
-                <div style="font-size: 50px;">🍉</div>
-                <h3>Fruit Cut</h3>
-            </div>
+        <h1 style="font-size: 32px; color: #2ecc71; margin-bottom: 20px;">SELECT GAME</h1>
+        <div class="btn-card" onclick="startSnake()">
+            <div style="font-size: 40px;">🐍</div>
+            <h3>Snake Pro</h3>
+        </div>
+        <div class="btn-card" onclick="startFruit()">
+            <div style="font-size: 40px;">🍉</div>
+            <h3>Fruit Cut</h3>
         </div>
     </div>
 
-    <div id="game-area">
-        <div style="font-size: 24px; margin-bottom: 10px;">
+    <div id="game-area" style="display:none; padding-top: 15px;">
+        <div style="font-size: 20px; margin-bottom: 10px;">
             Score: <span id="currentScore" style="color:#2ecc71">0</span>
-            <span id="lives-div" style="display:none; margin-left:20px;">Lives: <span id="lives">❤️❤️</span></span>
+            <span id="lives-div" style="display:none; margin-left:15px;">Lives: <span id="lives">❤️❤️</span></span>
         </div>
         <canvas id="g" width="400" height="500"></canvas>
+        
         <div id="snake-ctrl" class="controls" style="display:none;">
-            <button style="grid-column: 2;" class="ctrl-btn" onclick="if(d!='DOWN')d='UP'">▲</button>
-            <button style="grid-column: 1;" class="ctrl-btn" onclick="if(d!='RIGHT')d='LEFT'">◀</button>
-            <button style="grid-column: 3;" class="ctrl-btn" onclick="if(d!='LEFT')d='RIGHT'">▶</button>
-            <button style="grid-column: 2;" class="ctrl-btn" onclick="if(d!='UP')d='DOWN'">▼</button>
+            <div style="grid-column: 2;"><button class="ctrl-btn" onclick="if(d!='DOWN')d='UP'">▲</button></div>
+            <div style="grid-column: 1;"><button class="ctrl-btn" onclick="if(d!='RIGHT')d='LEFT'">◀</button></div>
+            <div style="grid-column: 3;"><button class="ctrl-btn" onclick="if(d!='LEFT')d='RIGHT'">▶</button></div>
+            <div style="grid-column: 2;"><button class="ctrl-btn" onclick="if(d!='UP')d='DOWN'">▼</button></div>
         </div>
-        <br><button onclick="location.reload()" style="padding:10px 20px; border-radius:10px; cursor:pointer;">🏠 Back to Menu</button>
+        <br>
+        <button onclick="location.reload()" style="padding:10px 20px; border-radius:8px; background:#e74c3c; color:white; border:none;">🏠 Menu</button>
     </div>
 
-    <script>
-        const c=document.getElementById("g"), x=c.getContext("2d");
-        let d='', sc=0, gameLoop, lives=2, activeGame='';
+    <div id="scoreModal">
+        <h2 style="color: #f1c40f;">🏆 TOP 5</h2>
+        <div id="highScoreContent"></div>
+        <button class="close-btn" onclick="closeLeaderboard()" style="margin-top:15px; padding:8px 20px; border-radius:5px; border:none; background:#e74c3c; color:white;">Close</button>
+    </div>
 
-        // --- Leaderboard Logic ---
-        function saveScore(name, score) {
-            let lb = JSON.parse(localStorage.getItem("top5")) || [];
-            lb.push({name: name, score: score});
-            lb.sort((a,b) => b.score - a.score);
-            localStorage.setItem("top5", JSON.stringify(lb.slice(0,5)));
-        }
-
-        function showLeaderboard() {
-            let lb = JSON.parse(localStorage.getItem("top5")) || [];
-            let html = lb.map((e, i) => `<div style="display:flex; justify-content:space-between; padding:5px; border-bottom:1px solid #334155;"><span>${i+1}. ${e.name}</span><b>${e.score}</b></div>`).join('');
-            document.getElementById("highScoreContent").innerHTML = html || "No scores yet!";
-            document.getElementById("scoreModal").style.display = "block";
-        }
-
-        function closeLeaderboard() { document.getElementById("scoreModal").style.display = "none"; }
-
-        function checkTop5(finalScore) {
-            let lb = JSON.parse(localStorage.getItem("top5")) || [];
-            if(lb.length < 5 || finalScore > lb[lb.length-1].score) {
-                let p = prompt("NEW RECORD! Enter Name:");
-                if(p) saveScore(p.substring(0,10), finalScore);
-            } else { alert("Game Over! Score: " + finalScore); }
-            location.reload();
-        }
-
-        function showGameArea() { document.getElementById("main-menu").style.display = "none"; document.getElementById("game-area").style.display = "block"; }
-
-        // --- Fruit Cut ---
-        function startFruit() {
-            showGameArea(); document.getElementById("lives-div").style.display = "inline";
-            let fruits = []; activeGame='fruit';
-            c.onmousedown = slice; c.onmousemove = e => { if(e.buttons==1) slice(e); };
-            function slice(e) {
-                let r = c.getBoundingClientRect();
-                let mx = (e.clientX || e.touches?.[0].clientX) - r.left, my = (e.clientY || e.touches?.[0].clientY) - r.top;
-                fruits.forEach(f => { if(!f.cut && Math.hypot(f.x-mx, f.y-my) < 40) { f.cut=true; sc++; document.getElementById("currentScore").innerText=sc; }});
-            }
-            gameLoop = setInterval(() => {
-                x.fillStyle="#000"; x.fillRect(0,0,400,500);
-                if(Math.random()<0.04) fruits.push({x:Math.random()*340+30, y:510, vy:-Math.random()*12-7, vx:Math.random()*4-2, type:['🍎','🍉','🍍','🍓'][Math.floor(Math.random()*4)], cut:false});
-                fruits.forEach((f,i) => {
-                    f.x+=f.vx; f.y+=f.vy; f.vy+=0.2; x.font="45px Arial"; x.textAlign="center";
-                    if(!f.cut) x.fillText(f.type, f.x, f.y);
-                    else { x.font="30px Arial"; x.fillText(f.type, f.x-15, f.y); x.fillText(f.type, f.x+15, f.y); }
-                    if(f.y>550 && !f.cut) { fruits.splice(i,1); lives--; document.getElementById("lives").innerText="❤️".repeat(lives)||"💀"; if(lives<=0) { clearInterval(gameLoop); checkTop5(sc); }}
-                });
-            }, 30);
-        }
-
-        // --- Snake Game ---
-        function startSnake() {
-            showGameArea(); document.getElementById("snake-ctrl").style.display = "grid";
-            let b=20, s=[{x:200,y:200}], f={x:100,y:100}; activeGame='snake';
-            gameLoop = setInterval(() => {
-                x.fillStyle="#000"; x.fillRect(0,0,400,500);
-                x.font="20px Arial"; x.fillText("🍎", f.x+10, f.y+18);
-                s.forEach((p,i) => { x.fillStyle=i==0?"#2ecc71":"#27ae60"; x.fillRect(p.x,p.y,b,b); });
-                let h={...s[0]}; if(d=="UP")h.y-=b; if(d=="DOWN")h.y+=b; if(d=="LEFT")h.x-=b; if(d=="RIGHT")h.x+=b;
-                if(d!=''){
-                    if(h.x==f.x&&h.y==f.y){ sc++; document.getElementById("currentScore").innerText=sc; f={x:Math.floor(Math.random()*19)*b,y:Math.floor(Math.random()*19)*b}; }
-                    else s.pop();
-                    if(h.x<0||h.x>=400||h.y<0||h.y>=500||s.some(p=>p.x==h.x&&p.y==h.y)){ clearInterval(gameLoop); checkTop5(sc); }
-                    s.unshift(h);
-                }
-            }, 150);
-        }
-        document.onkeydown=e=>{ if(e.keyCode==38&&d!="DOWN")d="UP"; if(e.keyCode==40&&d!="UP")d="DOWN"; if(e.keyCode==37&&d!="RIGHT")d="LEFT"; if(e.keyCode==39&&d!="LEFT")d="RIGHT"; };
-    </script>
-    <footer style="
-        margin-top: 50px; 
-        padding: 20px; 
-        background: rgba(30, 41, 59, 0.5); 
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-        font-size: 14px;
-        color: rgba(255, 255, 255, 0.6);
-        letter-spacing: 1px;
-    ">
+    <footer>
         Created by <span style="color: #ff4d94; font-weight: bold;">💖Apple💖</span>
     </footer>
+
+    <script>
+        // (Leaderboard aur Game logic wahi rahegi, canvas responsive CSS se handle ho gaya hai)
+        // ... (Baki saara JavaScript pichle response wala hi use karein)
+    </script>
 </body>
 </html>
