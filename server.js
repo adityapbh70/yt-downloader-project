@@ -1,6 +1,6 @@
 const express = require('express');
 const cors = require('cors');
-const ytdl = require('@distube/ytdl-core'); // Naya version use kar rahe hain
+const ytdl = require('@distube/ytdl-core');
 const app = express();
 
 app.use(cors());
@@ -8,27 +8,36 @@ app.use(cors());
 app.get('/download', async (req, res) => {
     try {
         const videoURL = req.query.url;
-        if(!videoURL) return res.status(400).send("URL zaroori hai");
+        if (!videoURL) return res.status(400).send("URL missing");
 
-        res.header('Content-Disposition', 'attachment; filename="video.mp4"');
-        
-        // Video download shuru karna
+        // Headers set karein taaki YouTube ko lage aap browser hain
+        const requestOptions = {
+            headers: {
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+                'Accept': '*/*',
+                'Connection': 'keep-alive'
+            }
+        };
+
+        const info = await ytdl.getInfo(videoURL, { requestOptions });
+        const title = info.videoDetails.title.replace(/[^\x00-\x7F]/g, "");
+
+        res.header('Content-Disposition', `attachment; filename="${title}.mp4"`);
+
         ytdl(videoURL, {
-    quality: 'highestvideo',
-    requestOptions: {
-        headers: {
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
-        }
-    }
-}).pipe(res);
+            quality: 'highest',
+            filter: 'audioandvideo',
+            requestOptions
+        }).pipe(res);
 
     } catch (err) {
-        console.error(err);
-        res.status(500).send("Kuch galti hui hai!");
+        console.error('Error:', err.message);
+        res.status(500).send("YouTube ne block kiya hai. Cookies ki zaroorat ho sakti hai.");
     }
 });
 
-const PORT = process.env.PORT || 4000; // Render ke liye zaroori hai
+// Port Render ke liye (Screenshot 185423 ke mutabiq 10000 par chalega)
+const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {
-    console.log(`Server chalu hai port ${PORT} par`);
+    console.log(`Server chalu hai port: ${PORT}`);
 });
