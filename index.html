@@ -1,62 +1,1466 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    
     <meta charset="UTF-8">
-    <title>Mera Chat App</title>
-   <link rel="stylesheet" href="style.css">
-</head>
-<body>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="icon" type="image/x-icon" href="https://www.imagetotext.info/favicon.ico">
+<meta name="_token" content="ZTOK5lR77tr0nlLDpRET5SRKL1ZLGxpn69S2uaWw" />
+<title>JPG to Excel - Online Image to Excel Converter</title>
+<meta name="description" content="Convert images into editable Excel spreadsheets with our JPG to Excel tool. Our Image to Excel Converter extracts data from JPG files quickly and accurately." />
 
-    <h2 style="text-align: center;">Dost Chat</h2>
 
-    <div id="chat-box">
-        <p><strong>Admin:</strong> Welcome to the chat!</p>
-        <p><strong>Dost:</strong> Hey, kaise ho?</p>
-    </div>
+<link rel="canonical" href="https://www.imagetotext.info/jpg-to-excel" />
+<link rel="alternate" hreflang="x-default" href="https://www.imagetotext.info/jpg-to-excel" />
+<link rel="alternate" hreflang="en" href="https://www.imagetotext.info/jpg-to-excel" />
+<link rel="alternate" hreflang="es" href="https://www.imagetotext.info/es/imagen-a-excel" />
+<link rel="alternate" hreflang="br" href="https://www.imagetotext.info/br/imagem-para-excel" />
+<link rel="alternate" hreflang="fr" href="https://www.imagetotext.info/fr/image-en-excel" />
+<link rel="alternate" hreflang="vi" href="https://www.imagetotext.info/vi/image-to-excel" />
+<link rel="alternate" hreflang="tr" href="https://www.imagetotext.info/tr/jpg-to-excel" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preload"
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    as="style" onload="this.onload=null;this.rel='stylesheet'" />
+<!-- Fallback link for browsers that don't support preload -->
+<noscript>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet" />
+</noscript>
+<link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet" />
 
-    <div id="input-area">
-        <input type="text" id="user-msg" placeholder="Type a message...">
-        <button onclick="sendMessage()">Send</button>
-    </div>
 
+<link rel="stylesheet"
+    href="https://www.imagetotext.info/web_assets/frontend/css/style.css?v=14.4">
+
+<link rel="prefetch" href="https://www.imagetotext.info/web_assets/frontend/script/library/jquery.min.js" as="script">
+
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0JQ2R0N4GP"></script>
     <script>
-        // Message bhejne ka chota sa logic (sirf aapki screen par dikhega)
-        function sendMessage() {
-            let msgInput = document.getElementById("user-msg");
-            let chatBox = document.getElementById("chat-box");
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-0JQ2R0N4GP');
+    </script>
+    
+        
+        <link rel="stylesheet"
+        href="https://www.imagetotext.info/web_assets/frontend/css/jpg-to-excel.css?v=14.4">
+
+        
+                    <script async data-cfasync="false" src="https://cdn.snigelweb.com/adengine/imagetotext.info/loader.js" type="text/javascript"></script>
+                            </head>
+
+<body>
             
-            if(msgInput.value !== "") {
-                let newMsg = document.createElement("p");
-                newMsg.innerHTML = "<strong>Me:</strong> " + msgInput.value;
-                chatBox.appendChild(newMsg);
-                msgInput.value = ""; // Box saaf kar do
-                chatBox.scrollTop = chatBox.scrollHeight; // Niche scroll karo
+    
+    <header>
+    <div class="navbar desktop">
+        <div class="logo-div">
+            <div>
+                <a href="https://www.imagetotext.info" class="logo">
+                    <img src="https://www.imagetotext.info/web_assets/frontend/img/logo.svg?v=14.4"
+                        alt="logo" height="40" width="40" />
+                    <span>Image To Text</span>
+                </a>
+            </div>
+            <div class="nav-links tools">
+                <ul>
+                    <li>
+                        <a href="https://www.imagetotext.info/image-translator">
+                            Image Translator
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.imagetotext.info/jpg-to-word">
+                            JPG To Word
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.imagetotext.info/jpg-to-excel">
+                            JPG To Excel
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.imagetotext.info/pdf-to-excel">
+                            PDF To Excel
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="nav-links topnav" id="myTopnav">
+            <ul>
+                                    <li class="online-chat-li js-online-chat">
+                        <a href="javascript:void(0)">
+                            <img src="https://www.imagetotext.info/web_assets/frontend/img/icons/chat-us.svg?v=1.4" alt="chat"
+                                width="30" height="30" />
+                            Chat
+                        </a>
+                    </li>
+                
+                <li class="get-api-nav-li">
+                    <a href="https://www.imagetotext.info/jpg-to-excel-plans" class="eTrack" e-track="navbar pricing">
+                        <img src="https://www.imagetotext.info/web_assets/frontend/img/icons/pricing-icon.svg?v=1.4" alt="pricing"
+                            width="30" height="30" />
+                        <span>Pricing</span>
+                    </a>
+                </li>
+                                    <li>
+                        <a href="https://www.imagetotext.info/login" class="account-item auth-btns">
+                            <img src="https://www.imagetotext.info/web_assets/frontend/img/icons/login.svg?v=14.4"
+                                alt="login" width="30" height="30" />
+                            <span>Login</span>
+                        </a>
+                    </li>
+                            </ul>
+        </div>
+    </div>
+    <div class="navbar mobile">
+        <div class="logo-div">
+            <a href="https://www.imagetotext.info" class="logo">
+                <img height="40" width="40"
+                    src="https://www.imagetotext.info/web_assets/frontend/img/logo.svg?v=14.4"
+                    alt="logo" />
+                <span>Image To Text</span>
+            </a>
+        </div>
+        <div class="nav-links">
+            <ul>
+                <li>
+                    <span class="icon" onclick="toggle_menubar()">
+                        <div class="mobile-menu-trigger">
+                            <img class="navbar-icon"
+                                src="https://www.imagetotext.info/web_assets/frontend/img/navbar-menu-icon.svg?v=14.4"
+                                alt="Navbar Icon" width="18" height="18" />
+                            <img class="close-icon d-none"
+                                src="https://www.imagetotext.info/web_assets/frontend/img/navbar-close-icon.svg?v=14.4"
+                                alt="Navbar Icon" width="18" height="18" />
+                        </div>
+                    </span>
+                </li>
+            </ul>
+        </div>
+        <div class="mobile-nav-dropdown">
+            <ul class="margin-left-0">
+                <li>
+                    <a class="navbar-li" href="https://www.imagetotext.info/image-translator">
+                        <span>Image Translator</span>
+                        <img class="go-icon d-none"
+                            src="https://www.imagetotext.info/web_assets/frontend/img/mobile-dropdown-icon.svg?v=14.4"
+                            alt="view more icon" />
+                    </a>
+                </li>
+                <li>
+                    <a class="navbar-li" href="https://www.imagetotext.info/jpg-to-word">
+                        <span>JPG To Word</span>
+                        <img class="go-icon d-none"
+                            src="https://www.imagetotext.info/web_assets/frontend/img/mobile-dropdown-icon.svg?v=14.4"
+                            alt="view more icon" />
+                    </a>
+                </li>
+                <li>
+                    <a class="navbar-li" href="https://www.imagetotext.info/jpg-to-excel">
+                        <span>JPG To Excel</span>
+                        <img class="go-icon d-none"
+                            src="https://www.imagetotext.info/web_assets/frontend/img/mobile-dropdown-icon.svg?v=14.4"
+                            alt="view more icon" />
+                    </a>
+                </li>
+
+                <li>
+                    <a class="navbar-li" href="https://www.imagetotext.info/pdf-to-excel">
+                        <span>PDF To Excel</span>
+                        <img class="go-icon d-none"
+                            src="https://www.imagetotext.info/web_assets/frontend/img/mobile-dropdown-icon.svg?v=14.4"
+                            alt="view more icon" />
+                    </a>
+
+                </li>
+
+
+                
+                                    <li class="online-chat-nav js-online-chat">
+                        <a class="navbar__lower" href="javascript:void(0)">
+                            <div>
+                                <img src="https://www.imagetotext.info/web_assets/frontend/img/navbar-chat-icon.svg?v=14.4"
+                                    alt="navbar chat icon" width="30" height="30" />
+                                <span> Chat us</span>
+                            </div>
+                            <img class="go-icon d-none"
+                                src="https://www.imagetotext.info/web_assets/frontend/img/mobile-dropdown-icon.svg?v=14.4"
+                                alt="view more icon" />
+
+                        </a>
+                    </li>
+                                <li>
+                    <a href="https://www.imagetotext.info/jpg-to-excel-plans" class="navbar__lower">
+                        <div>
+                            <img src="https://www.imagetotext.info/web_assets/frontend/img/navbar-pricing-icon.svg?v=14.4"
+                                alt="navbar pricing icon" width="30" height="30" loading="lazy" />
+                            <span> Pricing</span>
+                        </div>
+                        <img class="go-icon d-none"
+                            src="https://www.imagetotext.info/web_assets/frontend/img/mobile-dropdown-icon.svg?v=14.4"
+                            alt="view more icon" />
+                    </a>
+                </li>
+                                    <li>
+                        <a href="https://www.imagetotext.info/login" class="navbar__lower">
+                            <div>
+                                <img src="https://www.imagetotext.info/web_assets/frontend/img/icons/login.svg?v=14.4"
+                                    alt="Login" width="30" height="30" />
+                                <span> Login</span>
+                            </div>
+
+                        </a>
+                    </li>
+                            </ul>
+        </div>
+    </div>
+</header>
+    
+
+    
+        <section class="section home tool-section">
+        <div class="container">
+            <h1 class="h1 text-center text-white">JPG To Excel</h1>
+<p class="text text-center text-white slogan">
+    Easily convert JPG to Excel in seconds with our free online image to Excel converter.
+</p>
+
+            <div class="tool home tool-grid">
+                <div>
+                    <div class="tool-span">
+                        <div class="tool-area">
+                            <div class="upload-section">
+                                <div class="before-upload upload-area">
+                                    <label for="file" class="cursor-pointer leading-0">
+                                        <img src="https://www.imagetotext.info/web_assets/frontend/img/icons/tool-box-image-new.svg?v=?v=14.4"
+                                            alt="image-logo" class="upload-section-img" height="80" width="100" />
+                                    </label>
+
+                                    <span class="drag-n-drop-text" id="js-drag-n-drop">
+                                        Drag & Drop, Upload or Paste image <br/> <small> Supported formats: JPG, PNG, GIF, JFIF (JPEG), HEIC </small>
+                                    </span>
+                                    <div class="selection-div">
+                                        <div class="dropdown browse-btn">
+                                            <button class="browse-dropbtn ">
+                                                <label for="file">
+                                                    <img src="https://www.imagetotext.info/web_assets/frontend/img/icons/upload-new.svg?v=?v=14.4"
+                                                        alt="Upload" height="20" width="20">
+                                                    <span> Browse</span>
+                                                </label>
+                                            </button>
+
+                                        </div>
+                                        <div class="url-switch js-toggle-url cursor-pointer cursor-pointer">
+                                            <img src="https://www.imagetotext.info/web_assets/frontend/img/icons/url-icon-new.svg?v=?v=14.4"
+                                                alt="url icon" class="url-icon" width="20" height="20">
+                                        </div>
+                                                                                <input type="file" hidden id="mobileCamera" accept="image/*"
+                                            capture="environment" />
+                                    </div>
+                                    <input type="file" name="file" id="file" hidden accept="image/*" multiple />
+                                </div>
+                            </div>
+                            <div class="after-img-upload d-none">
+                                <div class="selected-img-preview">
+
+                                </div>
+                                <div class="images-clear">
+                                    <button class="start-over-btn disable-btn"></button>
+
+                                    <div id="cloudflare_container" class="cloudflare_container"></div>
+                                    <span id="jsShadowRoot" class="cursor-pointer convert-btn">
+                                        Convert to Excel
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="result-waiting for_free_width d-none">
+                                <div class="header">
+                                    <div class="result-text-download-all">
+                                        <span>Result (<span
+                                                class="no_of_images">0</span>)</span>
+                                        <div class="d-flex gap-1" style="position: relative;">
+                                            <button class="start-over-btn d-none" id="js-start-over">
+                                                <img src="https://www.imagetotext.info/web_assets/frontend/img/start-over-icon-new.svg"
+                                                    alt="start over" height="20" width="20">
+                                                <span>Start Over</span>
+                                            </button>
+
+                                            <button class="download-span d-none" id="js-download-all">
+                                                <img src="https://www.imagetotext.info/web_assets/frontend/img/download-all-icon-new.svg?v=?v=14.4"
+                                                    alt="Download All" height="20" width="20">
+                                                <span
+                                                    style="line-height: 20px; font-size:14px;">Download All</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="response-parent"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bottom-review-section">
+                    <p class="privacy-disclaimer">
+                        *Your privacy is protected! No data is transmitted or stored.
+                    </p>
+                    <div class="review-stars d-none">
+    <p>Rate your experience</p>
+    <div class="stars">
+        <button data-count="1">
+            <img src="https://www.imagetotext.info/web_assets/frontend/_img/icons/rating-stars.svg" alt="rating-stars"
+                width="20" height="20">
+        </button>
+        <button data-count="2">
+            <img src="https://www.imagetotext.info/web_assets/frontend/_img/icons/rating-stars.svg" alt="rating-stars"
+                width="20" height="20">
+        </button>
+        <button data-count="3">
+            <img src="https://www.imagetotext.info/web_assets/frontend/_img/icons/rating-stars.svg" alt="rating-stars"
+                width="20" height="20">
+        </button>
+        <button data-count="4">
+            <img src="https://www.imagetotext.info/web_assets/frontend/_img/icons/rating-stars.svg" alt="rating-stars"
+                width="20" height="20">
+        </button>
+        <button data-count="5">
+            <img src="https://www.imagetotext.info/web_assets/frontend/_img/icons/rating-stars.svg" alt="rating-stars"
+                width="20" height="20">
+        </button>
+    </div>
+    
+    <form method="post" class="review-form" style="display: none;">
+        <div class="d-flex" style="flex-direction: column; gap: 8px">
+            <input type="email" id="email" name="email" autocomplete="off" spellcheck="off"
+                class="email-field" placeholder="Email (Optional)">
+            <textarea name="message" id="message" autocomplete="off" spellcheck="off" class="message-field"
+                placeholder="Message"></textarea>
+        </div>
+        <span id="js-error-message"></span>
+        <input type="submit" value="Submit" class="submit-message">
+    </form>
+</div>                </div>
+            </div>
+            <div class="text-center bg-light ad_left"
+            style="height:280px; max-width:100%; width:100%; margin-top:1rem; max-width: 85%; margin-inline:auto">
+            <div class="text-center">
+                <p class="adv_text">Advertisement</p>
+            </div>
+            <div class="_adDiv" style="max-width: 100%;min-height:250px; background:#f9f9f9; text-align:center">
+                                    <div id="adngin-middle_leaderboard-0"></div>
+                            </div>
+        </div>
+            </div>
+    </section>
+    <section class="section other-tools">
+        <div class="container">
+            <div class="other_tool_grid">
+                    <a class="tool_box"
+    href="https://www.imagetotext.info">
+    <div>
+        <img src="https://www.imagetotext.info/web_assets/frontend/img/tool/1.png?v=4.0" width="48" height="44" alt="icon"
+            loading="lazy" />
+    </div>
+    <p>Image To Text</p>
+</a>
+                    <a class="tool_box"
+    href="https://www.imagetotext.info/jpg-to-word">
+    <div>
+        <img src="https://www.imagetotext.info/web_assets/frontend/img/tool/2.png?v=4.0" width="48" height="44" alt="icon"
+            loading="lazy" />
+    </div>
+    <p>Jpg To Word</p>
+</a>
+                    <a class="tool_box"
+    href="https://www.imagetotext.info/pdf-to-text">
+    <div>
+        <img src="https://www.imagetotext.info/web_assets/frontend/img/tool/3.png?v=4.0" width="48" height="44" alt="icon"
+            loading="lazy" />
+    </div>
+    <p>Pdf To Text</p>
+</a>
+                    <a class="tool_box"
+    href="https://www.imagetotext.info/pdf-to-word">
+    <div>
+        <img src="https://www.imagetotext.info/web_assets/frontend/img/tool/4.png?v=4.0" width="48" height="44" alt="icon"
+            loading="lazy" />
+    </div>
+    <p>Pdf To Word</p>
+</a>
+                    <a class="tool_box"
+    href="https://www.imagetotext.info/text-to-pdf">
+    <div>
+        <img src="https://www.imagetotext.info/web_assets/frontend/img/tool/5.png?v=4.0" width="48" height="44" alt="icon"
+            loading="lazy" />
+    </div>
+    <p>Text To Pdf</p>
+</a>
+                    <a class="tool_box"
+    href="https://www.imagetotext.info/text-to-word">
+    <div>
+        <img src="https://www.imagetotext.info/web_assets/frontend/img/tool/6.png?v=4.0" width="48" height="44" alt="icon"
+            loading="lazy" />
+    </div>
+    <p>Text To Word</p>
+</a>
+                    <a class="tool_box"
+    href="https://www.imagetotext.info/invert-image">
+    <div>
+        <img src="https://www.imagetotext.info/web_assets/frontend/img/tool/24.png?v=4.0" width="48" height="44" alt="icon"
+            loading="lazy" />
+    </div>
+    <p>Invert Image</p>
+</a>
+                    <a class="tool_box"
+    href="https://www.imagetotext.info/text-to-image">
+    <div>
+        <img src="https://www.imagetotext.info/web_assets/frontend/img/tool/28.png?v=4.0" width="48" height="44" alt="icon"
+            loading="lazy" />
+    </div>
+    <p>Text To Image</p>
+</a>
+                    <a class="tool_box"
+    href="https://www.imagetotext.info/image-to-pdf">
+    <div>
+        <img src="https://www.imagetotext.info/web_assets/frontend/img/tool/38.png?v=4.0" width="48" height="44" alt="icon"
+            loading="lazy" />
+    </div>
+    <p>Image To Pdf</p>
+</a>
+                    <a class="tool_box"
+    href="https://www.imagetotext.info/image-translator">
+    <div>
+        <img src="https://www.imagetotext.info/web_assets/frontend/img/tool/39.png?v=4.0" width="48" height="44" alt="icon"
+            loading="lazy" />
+    </div>
+    <p>Image Translator</p>
+</a>
+                    <a class="tool_box"
+    href="https://www.imagetotext.info/qr-code-scanner">
+    <div>
+        <img src="https://www.imagetotext.info/web_assets/frontend/img/tool/45.png?v=4.0" width="48" height="44" alt="icon"
+            loading="lazy" />
+    </div>
+    <p>Qr Code Scanner</p>
+</a>
+                    <a class="tool_box"
+    href="https://www.imagetotext.info/word-to-pdf">
+    <div>
+        <img src="https://www.imagetotext.info/web_assets/frontend/img/tool/48.png?v=4.0" width="48" height="44" alt="icon"
+            loading="lazy" />
+    </div>
+    <p>Word To Pdf</p>
+</a>
+                    <a class="tool_box"
+    href="https://www.imagetotext.info/pdf-to-jpg">
+    <div>
+        <img src="https://www.imagetotext.info/web_assets/frontend/img/tool/50.png?v=4.0" width="48" height="44" alt="icon"
+            loading="lazy" />
+    </div>
+    <p>Pdf To Jpg</p>
+</a>
+                    <a class="tool_box"
+    href="https://www.imagetotext.info/merge-pdf">
+    <div>
+        <img src="https://www.imagetotext.info/web_assets/frontend/img/tool/81.png?v=4.0" width="48" height="44" alt="icon"
+            loading="lazy" />
+    </div>
+    <p>Merge Pdf</p>
+</a>
+                            <a class="tool_box"
+    href="https://www.imagetotext.info/qr-code-generator">
+    <div>
+        <img src="https://www.imagetotext.info/web_assets/frontend/img/tool/83.png?v=4.0" width="48" height="44" alt="icon"
+            loading="lazy" />
+    </div>
+    <p>Qr Code Generator</p>
+</a>
+                    <a class="tool_box"
+    href="https://www.imagetotext.info/word-to-jpg">
+    <div>
+        <img src="https://www.imagetotext.info/web_assets/frontend/img/tool/89.png?v=4.0" width="48" height="44" alt="icon"
+            loading="lazy" />
+    </div>
+    <p>Word To Jpg</p>
+</a>
+                    <a class="tool_box"
+    href="https://www.imagetotext.info/pdf-to-excel">
+    <div>
+        <img src="https://www.imagetotext.info/web_assets/frontend/img/tool/92.png?v=4.0" width="48" height="44" alt="icon"
+            loading="lazy" />
+    </div>
+    <p>Pdf To Excel</p>
+</a>
+                    <a class="tool_box"
+    href="https://www.imagetotext.info/barcode-scanner">
+    <div>
+        <img src="https://www.imagetotext.info/web_assets/frontend/img/tool/94.png?v=4.0" width="48" height="44" alt="icon"
+            loading="lazy" />
+    </div>
+    <p>Barcode Scanner</p>
+</a>
+                    <a class="tool_box"
+    href="https://www.imagetotext.info/excel-to-jpg">
+    <div>
+        <img src="https://www.imagetotext.info/web_assets/frontend/img/tool/102.png?v=4.0" width="48" height="44" alt="icon"
+            loading="lazy" />
+    </div>
+    <p>Excel To Jpg</p>
+</a>
+                    <a class="tool_box"
+    href="https://www.imagetotext.info/pdf-to-csv">
+    <div>
+        <img src="https://www.imagetotext.info/web_assets/frontend/img/tool/104.png?v=4.0" width="48" height="44" alt="icon"
+            loading="lazy" />
+    </div>
+    <p>Pdf To Csv</p>
+</a>
+                    <a class="tool_box"
+    href="https://www.imagetotext.info/html-to-pdf">
+    <div>
+        <img src="https://www.imagetotext.info/web_assets/frontend/img/tool/112.png?v=4.0" width="48" height="44" alt="icon"
+            loading="lazy" />
+    </div>
+    <p>Html To Pdf</p>
+</a>
+                    <a class="tool_box"
+    href="https://www.imagetotext.info/pdf-to-html">
+    <div>
+        <img src="https://www.imagetotext.info/web_assets/frontend/img/tool/113.png?v=4.0" width="48" height="44" alt="icon"
+            loading="lazy" />
+    </div>
+    <p>Pdf To Html</p>
+</a>
+    </div>
+<div class="guide content-section">
+    <h2 style="text-align: center;"><strong>What is JPG to Excel Converter?</strong></h2><p>Our JPG to Excel Converter is a powerful online tool that automatically converts textual and tabular data from images into editable MS Excel. It is powered with advanced OCR technology to extract data even from blurred images accurately.</p><p>The Image to Excel converter can streamline the work of data entry by eliminating the need for manual typing, reducing errors, and saving precious time.</p><h2><strong>How to Use the JPG Image to Excel Converter?</strong></h2><p><strong><em>You can easily convert JPG to Excel (XLSX) with the help of our tool. Just follow these simple steps;</em></strong></p><ol><li><strong>Paste</strong>, <strong>Upload</strong>, or <strong>Drag &amp; Drop </strong>images<strong> </strong>that you want to convert to Excel.</li><li>Optionally, you can input the <strong>&ldquo;URL&rdquo;</strong> of online images.</li><li>Click the <strong>&ldquo;Convert&rdquo; </strong>&nbsp;button.</li><li>Our tool will complete the conversion quickly and provide an editable Excel spreadsheet in the output.</li><li>Lastly, click the <strong>&ldquo;Download All&rdquo; </strong>button to save Excel files simultaneously.</li></ol>
+</div>
+        </div>
+    </section>
+    <div class="for_result_text d-none"></div>
+    <input type="hidden" id="copyTooltipLabel" value="Copy" />
+    <input type="hidden" id="copiedTooltipLabel" value="Copied" />
+    <input type="hidden" id="downloadTooltipLabel" value="Download" />
+    <input type="hidden" id="downloadedTooltipLabel" value="Downloaded" />
+    <input type="hidden" id="notTextFoundHeadingLabel" value="No Text Found" />
+    <input type="hidden" id="notTextFoundDetailLabel" value="We couldn&#039;t found any text." />
+    
+    
+
+    
+    <footer>
+        <section class="section footer-section">
+            <div class="container">
+                <div class="footer-grid">
+                    <div>
+                        <a class="imgtotxt_logo-footer" href="https://www.imagetotext.info"><img
+                                src="https://www.imagetotext.info/web_assets/frontend/img/icons/footer-logo.svg?v=2.3" alt="Logo"
+                                height="40" width="40" loading="lazy">
+                            Image to Text
+                        </a>
+                        <p class="footer-text">
+                            We present an online OCR (Optical Character Recognition) service to extract text from
+                            images.
+                        </p>
+                    </div>
+                    <div>
+                        <div class="footer_title">
+                            <p>Other Tools</p>
+                        </div>
+                        <div class="links_list">
+                            <a href="https://www.imagetotext.info/jpg-to-word">
+                                Jpg To Word </a>
+                            <a href="https://www.imagetotext.info/pdf-to-text">
+                                Pdf To Text </a>
+                            <a href="https://www.imagetotext.info/pdf-to-word">
+                                Pdf To Word </a>
+                            <a href="https://www.imagetotext.info/text-to-pdf">
+                                Text To PDF </a>
+                            <a href="https://www.imagetotext.info/text-to-word">
+                                Text To Word </a>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="footer_title">
+                            <p>Quick Links</p>
+                        </div>
+                        <div class="links_list">
+                                                                                        <a href="https://www.imagetotext.info/blog">
+                                    Blogs
+                                </a>
+                                                            <a href="https://www.imagetotext.info/privacy-policy.php">
+                                    Privacy Policy
+                                </a>
+                                                            <a href="https://www.imagetotext.info/refund-policy">
+                                    Refund Policy
+                                </a>
+                                                            <a href="https://www.imagetotext.info/terms-of-services.php">
+                                    Terms &amp; Conditions
+                                </a>
+                                                            <a href="https://www.imagetotext.info/contact-us.php">
+                                    Contact Us
+                                </a>
+                                                    </div>
+                    </div>
+                    <div>
+                        <div class="footer_title">
+                            <p>Resources</p>
+                        </div>
+                        <div class="links_list">
+                                                                                        <a href="https://www.imagetotext.info/premium">
+                                    Premium Plan
+                                </a>
+                                                            <a href="https://www.imagetotext.info/api-plans">
+                                    API Plan
+                                </a>
+                                                            <a href="https://www.imagetotext.info/api-docs">
+                                    API Documentation
+                                </a>
+                                                            <a href="https://www.imagetotext.info/jpg-to-excel-plans">
+                                    JPG to Excel Plans
+                                </a>
+                                                            <a href="https://www.imagetotext.info/jpg-to-excel-api-docs">
+                                    JPG to Excel API Docs
+                                </a>
+                                                    </div>
+                    </div>
+                    <div>
+                                                    <div class="footer_title">
+                                <p>Select Language</p>
+                            </div>
+                            <div class="footer_social_icon_div mb-2rem">
+                                <div class="dropdown locale-dropdown " id="dropdown">
+                                    <button class="dropbtn">
+                                        <span class="d-flex justify-content-center align-items-center">
+                                            <img src="https://www.imagetotext.info/web_assets/frontend/img/flags/en.svg?v=14.4"
+                                                alt="flag" class="flag" height="24" width="24" />
+                                            <p>
+                                                ENGLISH
+                                            </p>
+                                        </span>
+                                        <span class="d-flex justify-content-center align-items-center">
+                                            <img src="https://www.imagetotext.info/web_assets/frontend/img/caret.svg?v=14.4"
+                                                alt="caret" style="margin-inline: 5px" class="language-caret">
+                                        </span>
+                                    </button>
+                                    <div class="dropdown-content">
+                                                                                                                                                                                        <a
+                                                        href="https://www.imagetotext.info/jpg-to-excel">
+                                                    <img src="https://www.imagetotext.info/web_assets/frontend/img/flags/en.svg?v1.3"
+                                                        loading="lazy" alt="flag" height="24" width="24" />
+                                                    ENGLISH
+                                                    </a>
+                                                                                                                                                                                                                                <a
+                                                    href="https://www.imagetotext.info/es/imagen-a-excel">
+                                                <img src="https://www.imagetotext.info/web_assets/frontend/img/flags/es.svg?v1.3"
+                                                    loading="lazy" alt="flag" height="24" width="24" />
+                                                SPANISH
+                                                </a>
+                                                                                                                                                                                <a
+                                                    href="https://www.imagetotext.info/br/imagem-para-excel">
+                                                <img src="https://www.imagetotext.info/web_assets/frontend/img/flags/br.svg?v1.3"
+                                                    loading="lazy" alt="flag" height="24" width="24" />
+                                                PORTUGUÊS
+                                                </a>
+                                                                                                                                                                                <a
+                                                    href="https://www.imagetotext.info/fr/image-en-excel">
+                                                <img src="https://www.imagetotext.info/web_assets/frontend/img/flags/fr.svg?v1.3"
+                                                    loading="lazy" alt="flag" height="24" width="24" />
+                                                FRANÇAIS
+                                                </a>
+                                                                                                                                                                                <a
+                                                    href="https://www.imagetotext.info/vi/image-to-excel">
+                                                <img src="https://www.imagetotext.info/web_assets/frontend/img/flags/vi.svg?v1.3"
+                                                    loading="lazy" alt="flag" height="24" width="24" />
+                                                TIẾNG VIỆT
+                                                </a>
+                                                                                                                                                                                <a
+                                                    href="https://www.imagetotext.info/tr/jpg-to-excel">
+                                                <img src="https://www.imagetotext.info/web_assets/frontend/img/flags/tr.svg?v1.3"
+                                                    loading="lazy" alt="flag" height="24" width="24" />
+                                                TÜRK
+                                                </a>
+                                                                                                                        </div>
+                                </div>
+                            </div>
+                                                <div class="footer_title">
+                            <p>Email</p>
+                        </div>
+                        <a href="mailto:support@imagetotext.info" class="mailto-link">support@imagetotext.info</a>
+                        <div class="social-media-links">
+                            <span>
+                                <a href="https://www.facebook.com/imagetotext0" target="_blank" rel="noopener noreferrer">
+                                    <img src="https://www.imagetotext.info/web_assets/frontend/img/icons/facebook.svg?v=14.4"
+                                        alt="icon" loading="lazy" height="30" width="30">
+                                </a>
+                            </span>
+                            <span>
+                                <a href="https://x.com/ImgtoText" target="_blank" rel="noopener noreferrer">
+                                    <img src="https://www.imagetotext.info/web_assets/frontend/img/icons/twitter.svg?v=14.4"
+                                        alt="icon" loading="lazy" height="30" width="30">
+                                </a>
+                            </span>
+                            <span>
+                                <a href="https://www.linkedin.com/company/image-to-text-info/" target="_blank"
+                                    rel="noopener noreferrer">
+                                    <img src="https://www.imagetotext.info/web_assets/frontend/img/icons/linkedin.svg?v=14.4"
+                                        alt="icon" loading="lazy" height="30" width="30">
+                                </a>
+                            </span>
+                            <span>
+                                <a href="https://www.pinterest.com/image_to_text_info/" target="_blank"
+                                    rel="noopener noreferrer">
+                                    <img src="https://www.imagetotext.info/web_assets/frontend/img/icons/pinterest.svg?v=14.4"
+                                        alt="icon" loading="lazy" height="30" width="30">
+                                </a>
+                            </span>
+                            <span>
+                                <a href="https://www.instagram.com/imagetotext.info/ " target="_blank"
+                                    rel="noopener noreferrer">
+                                    <img src="https://www.imagetotext.info/web_assets/frontend/img/icons/insta.svg?v=14.4"
+                                        alt="icon" loading="lazy" height="30" width="30">
+                                </a>
+                            </span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="copyright-row">
+                    Copyright &copy; All rights reserved | It is made by
+                    <a href="https://www.imagetotext.info">imagetotext.info</a>
+                </div>
+            </div>
+        </section>
+    </footer>
+
+
+<!-- The Modal -->
+<div id="loginRegisterModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content login-register-modal ">
+        <div class="limit-modal-body p-relative">
+            <span class="accountModalClose right cursor-pointer">
+                <img src="https://www.imagetotext.info/web_assets/frontend/img/cross.svg?v=14.4"
+                    alt="cross" width="20" height="20">
+            </span>
+            <img src="https://www.imagetotext.info/web_assets/frontend/img/icons/login-register.svg?v=14.4"
+                alt="limit exceed" height="40">
+            <div class="showSignIn">
+                <p class="heading text-center" style="margin-top: 1rem;">Sign in with us today</p>
+                <p class="modal-text text-center">
+                    Enter your email and password to sign in your account
+                </p>
+            </div>
+            <div class="showSignUp d-none">
+                <p class="heading text-center">Sign up with us today</p>
+                <p class="modal-text text-center">
+                    Enter your email and password to sign up your account
+                </p>
+            </div>
+        </div>
+        <div>
+            <div id="message_status"></div>
+
+            <div class="login-form showSignIn">
+                <div class="form-grid">
+                    <form id="login-form">
+                        <input type="hidden" name="_token" value="ZTOK5lR77tr0nlLDpRET5SRKL1ZLGxpn69S2uaWw" autocomplete="off">                        <input type="hidden" name="plan_id" class="plan-id">
+                        <input type="hidden" name="plan_code" class="plan-code">
+                        <input type="hidden" name="coupon" class="coupon-code">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="email" placeholder="Email" name="email" required autocomplete="off">
+                            </div>
+                            <div class="form-group">
+                                <input type="password" placeholder="Password" name="password" required
+                                    autocomplete="off">
+                            </div>
+                            <div id="auth_login"></div>
+
+                            <a href="https://www.imagetotext.info/forgot-password" class="forget_password_span">Forgot
+                                Password?</a>
+                            <button type="submit" class="submit-btn comp_submit_btn">Sign In</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="login-form showSignUp d-none">
+                <div class="form-grid">
+                    <form id="signup-form">
+                        <input type="hidden" name="_token" value="ZTOK5lR77tr0nlLDpRET5SRKL1ZLGxpn69S2uaWw" autocomplete="off">                        <input type="hidden" name="plan_id" class="plan-id">
+                        <input type="hidden" name="plan_code" class="plan-code">
+                        <input type="hidden" name="coupon" class="coupon-code">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="text" placeholder="Name" name="name" required autocomplete="off">
+                            </div>
+                            <div class="form-group">
+                                <input type="email" placeholder="Email" name="email" required autocomplete="off">
+                            </div>
+                            <div class="form-group">
+                                <input type="password" placeholder="Password" name="password" required
+                                    autocomplete="off">
+                            </div>
+                            <div id="auth_signup"></div>
+
+                            <button type="submit" class="submit-btn comp_submit_btn">Sign Up</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+        <hr class="hr-text" data-content="OR">
+        <div class="mt-1em">
+            <a href="https://www.imagetotext.info/emd/login/google" class="social-login-div">
+                <p>Continue with google</p>
+                <img class="social-icon"
+                    src="https://www.imagetotext.info/web_assets/frontend/img/icons/google-login.svg?v=14.4"
+                    alt="google login">
+            </a>
+        </div>
+        <div class="text-center mt-1em showSignIn">
+            <p class="toggle-auth-text">
+                Don't have an account? <span id="jsShowSignUp">Sign Up</span>
+            </p>
+        </div>
+        <div class="text-center mt-1em showSignUp d-none">
+            <p class="toggle-auth-text">
+                Already have an account? <span id="jsShowSignIn">Sign in</span>
+            </p>
+        </div>
+    </div>
+</div>
+<input type="hidden" id="invisible" value="0x4AAAAAAAUwKvasO0jFqxlt">
+<input type="hidden" id="managed" value="0x4AAAAAAAXqxZC0gjXqXkxS">
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"></script>
+<script type="text/javascript">
+    var invisible_key = document.getElementById("invisible").value;
+    var managed_key = document.getElementById("managed").value;
+    if (invisible_key.length > 10 && managed_key.length > 10) {
+        function with_cloudflare_captcha(retry, click_time, function_name, theme = null, position = null, body = null,
+            fun =
+            function(
+                token) {
+                var start_val = 0;
+                if (parseInt('1') == 0) {
+                    start_val = 1;
+                } else {
+                    if (!retry) {
+                        start_val = 2;
+                    }
+                }
+                function_name(start_val + 'bcJo8EuaE62Ix2sMtOU9U3FPBhQzYVpepqceKfKe', token, body);
+            }) {
+            var now_time = Math.floor(Date.now() / 1000);
+            if (parseInt(now_time - click_time) < 0 || parseInt(now_time - click_time) > 3 || (
+                    typeof click_time) != 'number') {
+                return false;
             }
+            if (parseInt('1') == 0) {
+                fun(null);
+                return true;
+            }
+            if (retry) {
+                var siteKey = invisible_key;
+            } else {
+                var siteKey = managed_key;
+            }
+            var turnstile_obj = turnstile.render(position ?? 'body', {
+                sitekey: siteKey,
+                theme: theme ?? 'light',
+                language: $("html").attr('lang'),
+                callback: function(token) {
+                    turnstile.remove(turnstile_obj);
+                    fun(token);
+                },
+                error: function(error) {
+                    console.log("error calling challenge");
+                    with_cloudflare_captcha(false, (Date.now() / 1000), function_name, body);
+                }
+            });
+        }
+    } else {
+        console.error("Captcha key is invalid");
+    }
+</script>
+<div id="invalidImageModal" class="modal_invalid">
+    <div class="modal-content invalidImageModal">
+        <div class="limit-modal-body">
+            <div class="a-i-center">
+                <img src="https://www.imagetotext.info/web_assets/frontend/img/icons/caution.png?v=14.4"
+                    alt="cancel subscription">
+                <p class="heading text-center">Invalid URL</p>
+            </div>
+            <div class="px-12">
+                <p class="modal-text">
+                    Image not Found. This is because you have entered an invalid URL.
+                </p>
+            </div>
+            <div class="button_row">
+                <span class="browse-btn keep-plan-btn accountModalClose close_invalid_file">Close</span>
+                <span class="accountModalClose try-another-btn">Try Another URL</span>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="invalidtextModal" class="modal_invalid">
+    <div class="modal-content invalidImageModal">
+        <div class="limit-modal-body">
+            <div class="a-i-center">
+                <img src="https://www.imagetotext.info/web_assets/frontend/img/icons/caution.png?v=14.4"
+                    alt="cancel subscription">
+                <p class="heading text-center">Invalid URL</p>
+            </div>
+            <div class="px-12">
+                <p class="modal-text">
+                    Image not Found. This is because you have entered an invalid URL.
+                </p>
+            </div>
+            <div class="button_row">
+                <span class="browse-btn keep-plan-btn accountModalClose close_invalid_file">Close</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- The Modal -->
+<div id="limitExceedModal" class="modal" style="display: none;">
+    <!-- Modal content -->
+    <div class="modal-content limit-exceed-modal">
+        <div class="limit-modal-body">
+            <span class="accountModalClose right cursor-pointer">
+                <img src="https://www.imagetotext.info/web_assets/frontend/img/cross.svg?v=14.4"
+                    alt="cross" width="20" height="20">
+            </span>
+            <div class="d-flex align-items-center gap-1">
+                <img src="https://www.imagetotext.info/web_assets/frontend/img/icons/exclamation.png?v=14.4"
+                    alt="Exclaimation" width="18" height="18">
+                <p class="heading js-modal-heading">Limit Exceeded</p>
+            </div>
+                            <span class="d-flex align-items-center">
+                    <p class="modal-text js-popup-err-desc">
+                        Upgrade plan to upload multiple files
+                    </p>
+                </span>
+                    </div>
+        <!-- The Modal -->
+    <hr class="divider">
+    <div class="model-features">
+        <div class="choose-plan">
+                        
+            <label for="monthly-radio" class="subscription-price">
+                <p class="original-price">
+                    $5.5 <small> monthly</small>
+                </p>
+                <input type="radio" name="modal-plan" class="plan-option js-plan-option active" checked id="monthly-radio"
+                    data-code="95315" data-id="37">
+
+            </label>
+            <label for="yearly-radio" class="subscription-price">
+                <p class="original-price">
+                    $4.16 <small> monthly</small><br>
+                    <small>Billed Yearly <strong
+                            style="font-weight: 700;font-size: 12px;line-height: 16px;color:#575E68">$49.88</strong></small>
+                </p>
+                <input type="radio" name="modal-plan" class="plan-option js-plan-option" id="yearly-radio"
+                    data-code="89762" data-id="30">
+            </label>
+            
+        </div>
+        <div class="plan-items">
+            <p class="font-bold feature-list-heading">
+                Premium Features
+            </p>
+            <ul class="model-feature-list">
+                <li>
+                    <img src="https://www.imagetotext.info/web_assets/frontend/img/icons/plan-feature-list-item.svg?v=14.4"
+                        width="15" height="10" alt="tick">
+                    <p> No Daily Limit</p>
+                </li>
+                <li>
+                    <img src="https://www.imagetotext.info/web_assets/frontend/img/icons/plan-feature-list-item.svg?v=14.4"
+                        width="15" height="10" alt="tick">
+                    <p> File size upto 30 MB</p>
+                </li>
+                
+                <li class="">
+                    <img src="https://www.imagetotext.info/web_assets/frontend/img/icons/plan-feature-list-item.svg?v=14.4"
+                        width="15" height="10" alt="tick">
+                    <p> No Ads and Captcha</p>
+                </li>
+                <li class="">
+                    <img src="https://www.imagetotext.info/web_assets/frontend/img/icons/plan-feature-list-item.svg?v=14.4"
+                        width="15" height="10" alt="tick">
+                    <p> Allow All Image Types</p>
+                </li>
+                <li class="">
+                    <img src="https://www.imagetotext.info/web_assets/frontend/img/icons/plan-feature-list-item.svg?v=14.4"
+                        width="15" height="10" alt="tick">
+                    <p> Upload upto 10 images</p>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+    <hr class="divider">
+
+    <div class="subscribe-section">
+                    <a href="https://www.imagetotext.info/register" rel="noopener noreferrer" class="plans-pricing-btn">
+                Continue as Free
+            </a>
+                            <a class="subscription-btn accountModal eTrack js-guest-subscription-btn" href="javascript:void(0)"
+                e-track="Validation/Limitation Guest Modal" data-code="95315"
+                data-id="37">
+                Subscribe Now
+            </a>
+            </div>
+    </div>
+</div>
+    <!-- The Modal -->
+<div id="limitExceedModalJPG" class="modal" style="display: none;">
+    <!-- Modal content -->
+    <div class="modal-content limit-exceed-modal">
+        <div class="limit-modal-body">
+            <span class="accountModalClose right cursor-pointer">
+                <img src="https://www.imagetotext.info/web_assets/frontend/img/cross.svg?v=14.4" alt="cross" width="20" height="20">
+            </span>
+            <div class="d-flex align-items-center gap-1">
+                <img src="https://www.imagetotext.info/web_assets/frontend/img/icons/exclamation.png?v=14.4" alt="Exclaimation"
+                    width="18" height="18">
+                <p class="heading js-modal-heading">Limit Exceeded</p>
+            </div>
+                            <span class="d-flex align-items-center">
+                    <p class="modal-text js-popup-err-desc">
+                        Upgrade plan to upload multiple files
+                    </p>
+                </span>
+                    </div>
+        <!-- The Modal -->
+    <hr class="divider">
+    <div class="model-features">
+        <div class="choose-plan">
+                        <label for="weekly-radio-jpg" class="subscription-price">
+                <p class="original-price">
+                    $4.9 <small> monthly</small>
+                </p>
+                <input type="radio" name="modal-plan" class="plan-option js-plan-option" id="weekly-radio-jpg"
+                    data-code="112580" data-id="67">
+
+            </label>
+            <label for="monthly-radio-jpg" class="subscription-price">
+                <p class="original-price">
+                    $7.9 <small> monthly</small>
+                </p>
+                <input type="radio" name="modal-plan" class="plan-option js-plan-option active" checked
+                    id="monthly-radio-jpg" data-code="110022"
+                    data-id="68">
+            </label>
+            <label for="yearly-radio-jpg" class="subscription-price">
+                <p class="original-price">
+                    $14.9 <small> monthly</small>
+                </p>
+                <input type="radio" name="modal-plan" class="plan-option js-plan-option"
+                    id="yearly-radio-jpg" data-code="112581"
+                    data-id="69">
+            </label>
+        </div>
+        <div class="plan-items">
+            <p class="font-bold feature-list-heading">
+                Premium Features
+            </p>
+            <ul class="model-feature-list">
+                <li>
+                    <img src="https://www.imagetotext.info/web_assets/frontend/img/icons/plan-feature-list-item.svg?v=14.4"
+                        width="15" height="10" alt="tick">
+                    <p> No Daily Limit</p>
+                </li>
+                <li>
+                    <img src="https://www.imagetotext.info/web_assets/frontend/img/icons/plan-feature-list-item.svg?v=14.4"
+                        width="15" height="10" alt="tick">
+                    <p class="queries_jpgtoexcel">1500 Credits</p>
+                </li>
+                <li>
+                    <img src="https://www.imagetotext.info/web_assets/frontend/img/icons/plan-feature-list-item.svg?v=14.4"
+                        width="15" height="10" alt="tick">
+                    <p> File size upto 30 MB</p>
+                </li>
+                                    <li class="mobile-hide-item">
+                        <img src="https://www.imagetotext.info/web_assets/frontend/img/icons/plan-feature-list-item.svg?v=14.4"
+                            width="15" height="10" alt="tick">
+                        <p> No Ads and Captcha</p>
+                    </li>
+                    <li class="mobile-hide-item">
+                        <img src="https://www.imagetotext.info/web_assets/frontend/img/icons/plan-feature-list-item.svg?v=14.4"
+                            width="15" height="10" alt="tick">
+                        <p> Allow All Image Types</p>
+                    </li>
+                    <li class="mobile-hide-item">
+                        <img src="https://www.imagetotext.info/web_assets/frontend/img/icons/plan-feature-list-item.svg?v=14.4"
+                            width="15" height="10" alt="tick">
+                        <p> Upload upto 10 images</p>
+                    </li>
+                            </ul>
+        </div>
+    </div>
+    <hr class="divider">
+
+    <div class="subscribe-section">
+        <a href="https://www.imagetotext.info/jpg-to-excel-plans" target="_blank" rel="noopener noreferrer"
+            class="plans-pricing-btn">
+            Pricing
+        </a>
+                    <a class="subscription-btn accountModal eTrack js-guest-subscription-btn" href="javascript:void(0)"
+                e-track="Validation/Limitation Guest Modal" data-code="110022"
+                data-id="68">
+                Subscribe Now
+            </a>
+            </div>
+    </div>
+</div>
+<script>
+    const limitExced = "Limit Exceeded";
+    let limitExceedDesc = "Max 1 image per submission for free users";
+    const imageSizeForPremium = "File Size Exceed";
+    const premiumModeTitle = "This mode is premium";
+    const premiumModeDesc = "Upgrade plan to use the Formatted Text mode";
+    const imageSizeTitleDesc = "Max. 5 MB image size allowed";
+    const fileTypeNotAllowTitle = "File Type Not Allowed";
+    const fileTypeNotAllowDesc = "Invalid file type";
+    const supported_format = "Supported formats: JPG, PNG, GIF, JFIF (JPEG), HEIC";
+    const dailyLimitExceed = "Daily Limit Reached";
+    const dailyLimitExceedDesc = "Free user can convert 7 images daily";
+    const dailyLimitFormatedDesc = "Free user can use 1 image daily.";
+
+    const perMinuteLimitHeading = "Per Minute Limit Reached";
+    const perDayLimitHeading = "Daily Limit Reached";
+
+    const premiumMinuteLimitDesc = "15 Images per Minute are Allowed";
+    const premiumDailyLimitDesc = "Max. Images per Day have been Allowed";
+    const emptyText = "No text found";
+    const emptyTextDesc = "No text found in this file";
+
+    const emptyTable = "No data found";
+    const emptyTableDesc = "No data found in this file";
+    const freeMinuteLimitDesc = "Free Users can translate 2 Images per Minute";
+    const invalidFileDesc = "The uploaded file is invalid or corrupted.";
+    const invalidFileHead = "Invalid File";
+    const limitexceedformated = "Max. 1 image per submission for registered users.";
+    const passwordProtectedFileDesc = "The uploaded file is password protected.";
+
+    if (parseInt("0") == 2) {
+        limitExceedDesc = "Max. 5 images per submission for free users.";
+    }
+    if (parseInt("0") == 1) {
+        limitExceedDesc = "Max. 5 images per submission for free users.";
+        if (document.querySelector('#js-drag-n-drop')) {
+            const drag_n_drop_premium = `Drag & Drop, Upload or Paste Images <br/> <small> Upload 10 Images at once </small>`;
+            document.querySelector('#js-drag-n-drop').innerHTML = drag_n_drop_premium;
+        }
+    }
+</script>
+<div id="adngin-sidebar_sticky-0"></div>
+    
+    <script>
+    const BASE_URL = "https://www.imagetotext.info" + "/";
+    const env = "production";
+    const SUBMIT_BTN = "Submit";
+    const IS_PREMIUM = parseInt("0");
+    const IS_TOOL_PREMIUM = parseInt("0");
+    const PER_REQUEST_LIMIT = IS_PREMIUM ? 50 : 3;
+    const IS_PREMIUM_COOKIE = 0;
+    const CURRENT_LANG = "en";
+    const TOOL_ID = parseInt("82");
+    const CURRENT_TOOL_ID = parseInt("82");
+    const USER_ID = parseInt("0");
+</script>
+
+<script src="https://www.imagetotext.info/web_assets/frontend/script/library/jquery.min.js"></script>
+<script
+    src="https://www.imagetotext.info/web_assets/frontend/script/general.js?v=14.4">
+</script>
+
+<script
+    src="https://www.imagetotext.info/web_assets/frontend/script/cropper.js?v=14.4">
+</script>
+ <div class="modalImgCropper" id="imageCropperModal">
+        <div class="cropper-modal-content">
+            <div id="cropper-container">
+                <img id="fullImage" src="" alt="Full Image">
+            </div>
+            <div class="cropper-footer">
+                <button id="resetCrop" class="btn-grey">Reset</button>
+                <div class="cropper-action">
+                    <button class="btn-grey rotate-btn" id="rotate-left"><img
+                            src="https://www.imagetotext.info/web_assets/frontend/img/icons/rotate-left.svg"
+                            alt="rotate left"></button>
+                    <button class="btn-grey rotate-btn" id="rotate-right"><img
+                            src="https://www.imagetotext.info/web_assets/frontend/img/icons/rotate-right.svg"
+                            alt="rotate left"></button>
+                    <button id="cropButton" class="btn-dark">Crop</button>
+                </div>
+            </div>
+        </div>
+    </div>
+<script>
+            function delayedLoad() {
+                setTimeout(function() {
+                    var noscriptElement = document.createElement('noscript');
+                    noscriptElement.innerHTML =
+                        '<a href="https://www.livechat.com/chat-with/16690533/" rel="nofollow">Chat with us</a>, powered by <a href="https://www.livechat.com/?welcome" rel="noopener nofollow" target="_blank">LiveChat</a>';
+                    document.body.appendChild(noscriptElement);
+                    window.__lc = window.__lc || {};
+                    window.__lc.license = 16690533;
+                    window.__lc.integration_name = "manual_channels";
+                    window.__lc.product_name = "livechat";
+                    window.__lc.chat_between_groups = false;
+                    (function(n, t, c) {
+                        function i(n) {
+                            return e._h ? e._h.apply(null, n) : e._q.push(n)
+                        }
+                        var e = {
+                            _q: [],
+                            _h: null,
+                            _v: "2.0",
+                            on: function() {
+                                i(["on", c.call(arguments)])
+                            },
+                            once: function() {
+                                i(["once", c.call(arguments)])
+                            },
+                            off: function() {
+                                i(["off", c.call(arguments)])
+                            },
+                            get: function() {
+                                if (!e._h) throw new Error(
+                                    "[LiveChatWidget] You can't use getters before load.");
+                                return i(["get", c.call(arguments)])
+                            },
+                            call: function() {
+                                i(["call", c.call(arguments)])
+                            },
+                            init: function() {
+                                var n = t.createElement("script");
+                                n.async = !0, n.type = "text/javascript", n.src =
+                                    "https://cdn.livechatinc.com/tracking.js", t.head.appendChild(n)
+                            }
+                        };
+                        !n.__lc.asyncInit && e.init(), n.LiveChatWidget = n.LiveChatWidget || e
+                    }(window, document, [].slice))
+                    $(".js-online-chat").on('click', function() {
+                        var iframe = $("#chat-widget-minimized")[0];
+                        var iframeDocument = iframe?.contentDocument || iframe?.contentWindow?.document;
+                        var chatButton = (iframeDocument.children)[0].querySelector('button');
+                        $(chatButton).click();
+                    });
+                }, 3000);
+            }
+            delayedLoad();
+        </script>
+            <script>
+        const CONVERT_BTN_TEXT = "Convert to Excel";
+        const CONVERTing_BTN_TEXT = "Converting...";
+        const maxFileSize = 5;
+        const maxFiles = 1;
+        const preview_text = "Preview";
+        const edit_text = "Edit";
+        const preview_close = "Close Preview";
+        const download_text = "Download";
+        const clear_all_text = "Clear All";
+        const clear_text = "Clear";
+        const copy_text = "Copy";
+        const copied_text = "Copied";
+        const no_url_head = "No URL Found."
+        const invalid_url_head = "Invalid URL"
+        const no_url_description = "Please Enter URL to Start Processing"
+        const invalid_url_description = "Image not Found. This is because you have entered an invalid URL."
+        const MAX_CONCURRENT_REQUESTS = 3;
+        const JPG_TO_EXCEL_URL = IS_TOOL_PREMIUM ? BASE_URL + "ajax/pro-jpg-to-excel" : BASE_URL + "ajax/free-jpg-to-excel";
+        const enterImageUrl = "Enter Image URL";
+    </script>
+    <script
+        src="https://www.imagetotext.info/web_assets/frontend/script/jpg-to-excel.js?v=14.4">
+    </script>
+    <script
+        src="https://www.imagetotext.info/web_assets/frontend/script/library/xlsx.full.min.js?v=14.4">
+    </script>
+    <script>
+        $(document).ready(function() {
+            $('.comp_submit_btn').on('click', function(e) {
+                e.preventDefault();
+
+                let form = $(this).closest('form');
+                let formData = {
+                    _token: $('meta[name="_token"]').attr('content'),
+                    email: form.find('input[name="email"]').val(),
+                    password: form.find('input[name="password"]').val(),
+                    name: form.find('input[name="name"]').val(),
+                    plan_id: form.find('input[name="plan_id"]').val(),
+                    plan_code: form.find('input[name="plan_code"]').val(),
+                    coupon: form.find('input[name="coupon"]').val(),
+                    premium_login: parseInt(getCookie("premium_login") || 0)
+                };
+
+                let isSignup = form.attr('id') === 'signup-form';
+                let url = isSignup ? "https://www.imagetotext.info/emd/register/web" : "https://www.imagetotext.info/emd/login/web";
+                let container_id = isSignup ? 'auth_signup' : 'auth_login';
+                const openedByEdu = $("#loginRegisterModal").data("opened-by-edu") || false;
+
+                if (!validateForm(formData, isSignup, openedByEdu)) return false;
+                $('.comp_submit_btn').attr('disabled', true).css('pointer-events', 'none').text(
+                    'Processing...');
+                with_cloudflare_captcha(false, Date.now() / 1000, function(hash, token) {
+                    formData.emd_captcha_1 = hash;
+                    formData.emd_captcha_2 = token;
+                    formData.emd_captcha_3 = Date.now() / 1000;
+
+                    submitForm(url, formData);
+                }, "light", "#" + container_id, {
+                    wrapEle: $(this)
+                });
+            });
+        });
+
+        function validateForm(data, isSignup = false, openedByEdu = false) {
+            if (!validateEmail(data.email)) {
+                $('#message_status').html('<p class="error" style="color: red">Please enter a valid email</p>');
+                return false;
+            }
+            if (openedByEdu) {
+                const eduEmailPattern = /\.edu(?:\.[a-z]{2})?$/i;
+                if (!eduEmailPattern.test(data.email)) {
+                    $('#message_status').html(
+                        '<p class="error" style="color: red">Please use a valid .edu email address.</p>');
+                    return false;
+                }
+            }
+            if (data.password.length < 8) {
+                $('#message_status').html('<p class="error" style="color: red">Password must be at least 8 characters</p>');
+                return false;
+            }
+            if (isSignup && !data.name) {
+                $('#message_status').html('<p class="error" style="color: red">Please enter your name</p>');
+                return false;
+            }
+            return true;
+        }
+
+        function submitForm(url, formData) {
+            $.ajax({
+                url: url,
+                type: 'POST',
+                data: formData,
+                dataType: 'json',
+                success: function(response) {
+                    if (response.status) {
+                        $('#message_status').html(
+                            `<p class="success" style="color: green">${response.mess}</p>`);
+                        window.location.href = response.url;
+                    } else {
+                        $('#message_status').html(`<p class="error" style="color: red">${response.mess}</p>`);
+                    }
+                },
+                error: function(xhr) {
+                    console.log(xhr.responseJSON);
+                    
+                    if (
+                        xhr.responseJSON.verify_require == true ||
+                        (xhr.responseJSON.email_verified == false)
+                    ) {
+                        let email_Pass = formData.email;
+                        let encoded = btoa(email_Pass);
+                        let urlSafe = encodeURIComponent(encoded);
+                        window.location.href =
+                            BASE_URL + "verify-email?email=" + urlSafe;
+                    } else if(xhr.status == 429 )
+                    {
+                        $('#message_status').html(
+                            `<p class="error" style="color: red">${xhr.responseJSON.message}</p>`);
+                    }
+                    else{
+                        $('#message_status').html(
+                            `<p class="error" style="color: red">${xhr.responseJSON.message}</p>`);
+                    }
+                },
+                complete: function() {
+                    $('.comp_submit_btn').attr('disabled', false).css('pointer-events', 'auto').text('Submit');
+                }
+            });
+            setTimeout(() => {
+                $('#message_status').html('');
+            }, 3500);
         }
     </script>
-<script src="script.js"></script>
-<script type="module">
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-app.js";
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-analytics.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
+    
+    
 
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  const firebaseConfig = {
-    apiKey: "AIzaSyDkkzHxJMsrfqDdF-lltI-pwt3hz4ArY9s",
-    authDomain: "my-chat-app-47607.firebaseapp.com",
-    projectId: "my-chat-app-47607",
-    storageBucket: "my-chat-app-47607.firebasestorage.app",
-    messagingSenderId: "382793564792",
-    appId: "1:382793564792:web:c4d92cf1ea3afbd688a38d",
-    measurementId: "G-XH4CYQX7SM"
-  };
+    
+         <script src="https://www.imagetotext.info/web_assets/frontend/script/emd/etrack.js?v1.0.1"></script>
 
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
+            <script src="https://accounts.google.com/gsi/client" async defer></script>
+<div id="g_id_onload" data-client_id="433658528871-mb956nk9gboa3aafbarl9ddk3o3fsh47.apps.googleusercontent.com"
+    data-callback="handleCredentialResponse" data-ux_mode="popup">
+</div>
+
+
+
+
+<script>
+    function handleCredentialResponse(response) {
+        if (!response || !response.credential) {
+            console.error('Invalid response received');
+            return;
+        }
+
+        fetch("https://www.imagetotext.info/emd/login/google/gsi", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "X-CSRF-TOKEN": "ZTOK5lR77tr0nlLDpRET5SRKL1ZLGxpn69S2uaWw"
+                },
+                body: JSON.stringify({
+                    credential: response.credential
+                })
+            })
+            .then(res => {
+                if (!res.ok) {
+                    throw new Error('Network response was not ok: ' + res.status);
+                }
+                return res.json();
+            })
+            .then(res => {
+                if (res.success) {
+                    window.location.reload();
+                } else {
+                    throw new Error(res.message || 'Login failed');
+                }
+            })
+            .catch(error => {
+                console.error('Error during Google login:', error);
+            });
+    }
 </script>
+    
+    
 </body>
+
 </html>
